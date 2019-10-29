@@ -8,11 +8,11 @@ const renderRecipe = recipe => {
         <li>
             <a class="results__link" href="#${getID(recipe.recipe.uri)}">
                 <figure class="results__fig">
-                    <img src="${recipe.image}" alt="${recipe.label}">
+                    <img src="${recipe.recipe.image}" alt="${recipe.recipe.label}">
                 </figure>
                 <div class="results__data">
-                    <h4 class="results__name">${recipe.label}</h4>
-                    <p class="results__author">${recipe.source}</p>
+                    <h4 class="results__name">${recipe.recipe.label}</h4>
+                    <p class="results__author">${recipe.recipe.source}</p>
                 </div>
             </a>
         </li>
