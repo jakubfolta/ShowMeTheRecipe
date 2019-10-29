@@ -1,3 +1,5 @@
+import {elements} from './views/base';
+import * as searchView from './views/searchView'
 import Search from './models/Search';
 
 /** Global state of the app
@@ -27,7 +29,7 @@ const controlSearch = async () => {
 }
 
 
-document.querySelector('.search').addEventListener('submit', e => {
+elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
-});
+})
