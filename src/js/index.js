@@ -26,6 +26,7 @@ const controlSearch = async () => {
         // 5. Render results on UI
         searchView.renderResults(state.search.recipes);
         console.log(state.search.recipes);
+        searchView.clearField();
     }
 }
 

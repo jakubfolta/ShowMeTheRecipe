@@ -2,7 +2,9 @@ import {elements} from './base';
 
 export const getInput = () => elements.searchInput.value;
 
-export const clearField = () => {elements.searchInput.value = ''};
+export const clearField = () => {
+    elements.searchInput.value = '';
+};
 
 const renderRecipe = recipe => {
     const getID = uri => uri.split('#')[1];
@@ -20,8 +22,8 @@ const renderRecipe = recipe => {
         </li>
     `;
     elements.searchResList.insertAdjacentHTML('beforeend', markup);
-}
+};
 
 export const renderResults = recipes => {
     recipes.forEach(renderRecipe);
-}
+};
