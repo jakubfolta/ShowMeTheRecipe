@@ -6,7 +6,7 @@ export default class Search {
     }
 
     async getResults() {
-        const baseURL = 'http://cors-anywhere.herokuapp.com/https://api.edamam.com';
+        const baseURL = 'https://cors-anywhere.herokuapp.com/https://api.edamam.com';
         const apiKey = 'e87069e249c008138c270ffbdfc73fb8';
         const apiAppID = '606b6753';
 
