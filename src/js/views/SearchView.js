@@ -2,6 +2,8 @@ import {elements} from './base';
 
 export const getInput = () => elements.searchInput.value;
 
+export const clearField = () => {elements.searchInput.value = ''};
+
 const renderRecipe = recipe => {
     const getID = uri => uri.split('#')[1];
     const markup = `
