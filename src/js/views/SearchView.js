@@ -72,6 +72,7 @@ const renderButtons = (page, numResults, resPerPage) => {
         button = createButton(page, 'prev')
     }
 
+    elements.searchResPages.insertAdjacentHTML('afterbegin', button);
 };
 
 export const renderResults = (recipes, page = 1, resPerPage = 10) => {
@@ -79,4 +80,5 @@ export const renderResults = (recipes, page = 1, resPerPage = 10) => {
     const end = page * resPerPage;
 
     recipes.slice(start, end).forEach(renderRecipe);
+    renderButtons(page, recipes.length, resPerPage)
 };
