@@ -31,10 +31,13 @@ const controlSearch = async () => {
         searchView.renderResults(state.search.recipes);
         // console.log(state.search.recipes);
     }
-}
-
+};
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
+});
+
+elements.searchRes.addEventListener('click', e => {
+    console.log(e.target);
 })
