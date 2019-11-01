@@ -27,3 +27,4 @@ export const clearLoader = () => {
         loader.parentElement.removeChild(loader);
     }
 };
+
