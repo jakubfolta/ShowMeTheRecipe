@@ -57,7 +57,7 @@ elements.searchResPages.addEventListener('click', e => {
 * RECIPE CONTROLLER
 */
 
-const r = new Recipe(`2104d148cdf2993e7dcfb0edda052762`);
+const r = new Recipe(`http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_1b6dfeaf0988f96b187c7c9bb69a14fa`);
 r.getRecipe();
 
 
