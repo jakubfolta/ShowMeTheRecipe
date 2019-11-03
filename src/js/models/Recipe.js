@@ -33,6 +33,14 @@ export default class Recipe {
 
     parseIngredients() {
         const newIngredients = this.ingredients.map(el => {
+            // 1. Uniform units
+
+
+            // 2. Remove parentheses
+
+
+            // 3. Parse ingredients into count, unit and ingredient
+
             
         })
         this.ingredients = newIngredients;
