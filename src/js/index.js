@@ -28,13 +28,18 @@ const controlSearch = async () => {
         searchView.clearResults();
         renderLoader(elements.searchRes);
 
-        // 4. Search for recipes
-        await state.search.getResults();
+        try {
+            // 4. Search for recipes
+            await state.search.getResults();
 
-        // 5. Render results on UI
-        clearLoader();
-        searchView.renderResults(state.search.recipes);
-        // console.log(state.search.recipes);
+            // 5. Render results on UI
+            clearLoader();
+            searchView.renderResults(state.search.recipes);
+
+        } catch (error) {
+            console.log(error);
+            clearLoader();
+        }
     }
 };
 
@@ -57,10 +62,46 @@ elements.searchResPages.addEventListener('click', e => {
 * RECIPE CONTROLLER
 */
 
-const r = new Recipe(`http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_a7d58871fda455844753aace394440ae`);
-r.getRecipe();
+const controlRecipe = async () => {
+    // Get ID from the url
+    const id = window.location.hash.replace('#', '');
 
-console.log(r);
+    if (id) {
+        // Prepare UI for changes
+        // renderLoader(elements.searchRec);
+
+        // Create new recipe object
+        state.recipe = new Recipe(id);
+
+        try {
+            // Get recipe data
+            await state.recipe.getRecipe();
+
+            // Calculate servings and time
+            state.recipe.calcTime();
+            state.recipe.calcServings();
+
+            // Render recipe
+            // console.log(state.recipe);
+
+        } catch (error) {
+            console.log(error);
+            alert(`Error processing recipe => ${error}`)
+        }
+    }
+};
+
+// window.addEventListener('hashchange', controlRecipe);
+// window.addEventListener('load', controlRecipe);
+
+['hashchange', 'load'].forEach( event => window.addEventListener(event, controlRecipe));
+
+
+
+
+
+
+
 
 
 

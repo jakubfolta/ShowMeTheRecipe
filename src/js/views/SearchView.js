@@ -27,10 +27,9 @@ const limitRecipeTitle = (title, limit = 17) => {
 };
 
 const renderRecipe = recipe => {
-    const getID = uri => uri.split('#')[1];
     const markup = `
         <li>
-            <a class="results__link" href="#${getID(recipe.recipe.uri)}">
+            <a class="results__link" href="#${recipe.recipe.uri}">
                 <figure class="results__fig">
                     <img src="${recipe.recipe.image}" alt="${limitRecipeTitle(recipe.recipe.label)}">
                 </figure>
@@ -48,7 +47,7 @@ const createButton = (page, type) => `
     <button class="btn-inline results__btn--${type}" data-goto = ${type === 'prev' ? page - 1 : page + 1}>
         <span>Page ${type === 'prev' ? page - 1 : page + 1}</span>
         <svg class="search__icon">
-            <use href="img/icons.svg#icon-triangle-${type === 'next' ? 'right' : 'left'}"></use>
+            <use href="dist/img/icons.svg#icon-triangle-${type === 'next' ? 'right' : 'left'}"></use>
         </svg>
     </button>
 `;
