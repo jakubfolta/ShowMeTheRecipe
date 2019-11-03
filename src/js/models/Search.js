@@ -15,8 +15,8 @@ export default class Search {
                 el.recipe.uri = `${encodeURIComponent(el.recipe.uri)}`;
             });
 
-            console.log(this.recipes);
-        }catch(error){
+            // console.log(this.recipes);
+        } catch(error){
             alert(error);
         }
     }
