@@ -82,7 +82,7 @@ const controlRecipe = async () => {
             state.recipe.calcServings();
 
             // Render recipe
-            // console.log(state.recipe);
+            console.log(state.recipe);
 
         } catch (error) {
             console.log(error);

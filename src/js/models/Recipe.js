@@ -30,4 +30,11 @@ export default class Recipe {
     calcServings() {
         this.servings = 4;
     }
+
+    parseIngredients() {
+        const newIngredients = this.ingredients.map(el => {
+            
+        })
+        this.ingredients = newIngredients;
+    }
 }
