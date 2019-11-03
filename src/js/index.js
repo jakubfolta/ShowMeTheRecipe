@@ -57,10 +57,40 @@ elements.searchResPages.addEventListener('click', e => {
 * RECIPE CONTROLLER
 */
 
-const r = new Recipe(`http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_a7d58871fda455844753aace394440ae`);
-r.getRecipe();
+const controlRecipe = () => {
+    // Get ID from the url
+    const id = window.location.hash.replace('#', '');
+    console.log(id);
 
-console.log(r);
+    if (id) {
+        // Prepare UI for changes
+        renderLoader(elements.searchRec);
+
+        // Create new recipe object
+        const newRecipe = new Recipe(id);
+        newRecipe.getRecipe();
+        console.log(newRecipe);
+
+        // Get recipe data
+
+
+        // Calculate servings and time
+
+
+        // Render recipe
+    }
+};
+
+window.addEventListener('hashchange', controlRecipe);
+
+
+
+
+
+
+
+
+
 
 
 
