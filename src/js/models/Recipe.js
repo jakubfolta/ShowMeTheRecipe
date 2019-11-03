@@ -9,7 +9,6 @@ export default class Recipe {
     async getRecipe() {
         try {
             const res = await axios(`${baseURL}/search?r=${this.id}&app_id=${apiAppID}&app_key=${apiKey}`);
-            console.log(res);
             this.title = res.data[0].label;
             this.author = res.data[0].source;
             this.img = res.data[0].image;
@@ -17,6 +16,7 @@ export default class Recipe {
             this.ingredients = res.data[0].ingredients;
         } catch (error) {
             console.log(error);
+            alert(error)
         }
     }
 
@@ -25,5 +25,9 @@ export default class Recipe {
         const numIng = this.ingredients.length;
         const periods = Math.ceil(numIng / 3);
         this.time = periods * 15;
+    }
+
+    calcServings() {
+        this.servings = 4;
     }
 }
