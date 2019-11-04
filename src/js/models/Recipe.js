@@ -37,7 +37,7 @@ export default class Recipe {
 
         const newIngredients = this.ingredients.map(el => {
             // 1. Uniform units
-            let ingredient = el.lowerCase();
+            let ingredient = el.text.toLowerCase();
             unitsLong.forEach((cur, i) => {
                 ingredient.replace(cur, unitsShort[i]);
             })
@@ -47,8 +47,31 @@ export default class Recipe {
 
             // 3. Parse ingredients into count, unit and ingredient
 
-
+            return ingredient;
         })
         this.ingredients = newIngredients;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
