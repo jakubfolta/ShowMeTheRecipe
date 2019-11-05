@@ -4,7 +4,7 @@ export const elements = {
     searchResList: document.querySelector('.results__list'),
     searchRes: document.querySelector('.results'),
     searchResPages: document.querySelector('.results__pages'),
-    searchRec: document.querySelector('.recipe')
+    recipe: document.querySelector('.recipe')
 };
 
 export const elementStrings = {
@@ -15,7 +15,7 @@ export const renderLoader = parent => {
     const loader = `
         <div class="loader">
             <svg>
-                <use href="./dist/img/icons.svg#icon-cw"></use>
+                <use href="img/icons.svg#icon-cw"></use>
             </svg>
         </div>
     `;
