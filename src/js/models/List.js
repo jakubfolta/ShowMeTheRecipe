@@ -12,6 +12,8 @@ export default class List {
             unit,
             ingredient
         }
+        this.items.push(item);
+        return item;
     }
 
     deleteItem(id) {
@@ -21,6 +23,6 @@ export default class List {
     }
 
     updateCount(id, newCount) {
-        item = this.items.find(el => el.id === id).count = newCount;
+        this.items.find(el => el.id === id).count = newCount;
     }
 }
