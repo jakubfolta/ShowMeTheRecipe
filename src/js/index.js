@@ -1,6 +1,7 @@
 import {elements, renderLoader, clearLoader} from './views/base';
 import * as searchView from './views/searchView'
 import * as recipeView from './views/recipeView'
+import * as listView from './views/listView'
 import Search from './models/Search';
 import Recipe from './models/Recipe';
 import List from './models/List';
@@ -114,9 +115,11 @@ const controlList = () => {
     // Create new list if there is none yet
     if (!state.list) state.list = new List();
 
-    // Add each ingredient to the list
-    state.recipe.ingredients.forEach(el => state.list.addItem(...el));
-
+    // Add each ingredient to the list and UI
+    state.recipe.ingredients.forEach(el => {
+        const item = state.list.addItem(el.count, el.unit, el.ingredient);
+        listView.renderItem(item);
+    });
 };
 
 // Handling recipe button clicks
