@@ -106,6 +106,19 @@ const controlRecipe = async () => {
 
 ['hashchange', 'load'].forEach( event => window.addEventListener(event, controlRecipe));
 
+/**
+* RECIPE CONTROLLER
+*/
+
+const controlList = () => {
+    // Create new list if there is none yet
+    if (!state.list) state.list = new List();
+
+    // Add each ingredient to the list
+    state.recipe.ingredients.forEach(el => state.list.addItem(...el));
+
+};
+
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
     if (e.target.matches('.btn-decrease, .btn-decrease *')) {
@@ -119,15 +132,16 @@ elements.recipe.addEventListener('click', e => {
         // Increase button is clicked
         state.recipe.updateServings('inc');
         recipeView.updateServingsIngredients(state.recipe);
+    } else if (e.target.matches('.recipe__btn--add, .recipe__btn--add *')) {
+        controlList();
     }
     console.log(state.recipe);
 });
 
 window.l = new List();
+window.s = state;
 
-/**
-* RECIPE CONTROLLER
-*/
+
 
 
 
