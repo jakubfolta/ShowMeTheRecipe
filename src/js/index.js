@@ -16,7 +16,6 @@ import Likes from './models/Likes';
 */
 const state = {};
 
-
 /**
 * SEARCH CONTROLLER
 */
@@ -103,9 +102,6 @@ const controlRecipe = async () => {
     }
 };
 
-// window.addEventListener('hashchange', controlRecipe);
-// window.addEventListener('load', controlRecipe);
-
 ['hashchange', 'load'].forEach( event => window.addEventListener(event, controlRecipe));
 
 /**
@@ -139,10 +135,6 @@ elements.shopping.addEventListener('click', e => {
         state.list.updateCount(id, val);
     }
 });
-
-// TESTING
-state.likes = new Likes();
-likesView.toggleLikeMenu(state.likes.getNumLikes());
 
 /**
 * LIKES CONTROLLER
@@ -179,10 +171,21 @@ const controlLike = () => {
         likesView.deleteLike(currentID);
     }
     likesView.toggleLikeMenu(state.likes.getNumLikes());
-
 };
 
-// Restore
+// Restore liked recipes on page load
+window.addEventListener('load', () => {
+    state.likes = new Likes();
+
+    // Restore likes
+    state.likes.readStorage();
+
+    // Toggle like menu button
+    likesView.toggleLikeMenu(state.likes.getNumLikes());
+
+    // Render like items
+    state.likes.likes.forEach( el => likesView.renderLike(el));
+});
 
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
@@ -205,12 +208,6 @@ elements.recipe.addEventListener('click', e => {
         controlLike();
     }
 });
-
-window.l = new List();
-window.s = state;
-
-
-
 
 
 

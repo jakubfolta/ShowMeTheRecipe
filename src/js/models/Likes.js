@@ -39,7 +39,7 @@ export default class Likes {
     }
 
     readStorage() {
-        const storage = JSON.parse(localStorage.getItem());
+        const storage = JSON.parse(localStorage.getItem('likes'));
 
         // Restoring likes from the localStorage
         if (storage) this.likes = storage;
