@@ -149,6 +149,12 @@ const controlLike = () => {
     // User has NOT yet liked current recipe
     if (!state.likes.isLiked(currentID)) {
         // Add like to the state
+        const newLike = state.likes.addLike(
+            currentID,
+            state.recipe.title,
+            state.recipe.author,
+            state.recipe.img
+        );
 
         // Toggle the like button
 
