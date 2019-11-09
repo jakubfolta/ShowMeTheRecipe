@@ -160,17 +160,18 @@ const controlLike = () => {
 
 
         // Add like to the UI
+        console.log(state.likes);
 
     // User HAS liked current recipe
     } else {
         // Remove like from the state
-
+        state.likes.deleteLike(currentID);
 
         // Toggle the like button
 
 
         // Remove like from the UI
-
+        console.log(state.likes);
     }
 
 };
