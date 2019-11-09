@@ -3,6 +3,9 @@ Recipes library where you can search for specific dish (API), check ingredients,
 
 ## Check Here ==> https://jakubfolta.github.io/ShowMeTheRecipe/
 
+## Recipe App
+![Show me the Recipe App](./images/showmetherecipe.png)
+
 ## Technologies
 * HTML5, CSS3, JavaScript ES6, NPM, Webpack/Babel
 
