@@ -11,7 +11,8 @@ export default class List {
             count,
             unit,
             ingredient
-        }
+        };
+
         this.items.push(item);
         return item;
     }
