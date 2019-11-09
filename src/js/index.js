@@ -138,6 +138,13 @@ elements.shopping.addEventListener('click', e => {
     }
 });
 
+/**
+* LIKES CONTROLLER
+*/
+
+
+
+
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
     if (e.target.matches('.btn-decrease, .btn-decrease *')) {
@@ -152,9 +159,12 @@ elements.recipe.addEventListener('click', e => {
         state.recipe.updateServings('inc');
         recipeView.updateServingsIngredients(state.recipe);
     } else if (e.target.matches('.recipe__btn--add, .recipe__btn--add *')) {
+        // Add ingredients to shopping list
         controlList();
+    } else if (e.target.matches('.recipe__love, .recipe__love *')) {
+        // Add recipe to likes
+        controlLike();
     }
-    console.log(state.recipe);
 });
 
 window.l = new List();
